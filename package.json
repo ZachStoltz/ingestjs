@@ -1,0 +1,19 @@
+{
+  "name": "ingestjs",
+  "version": "0.1.0",
+  "description": "A simple file ingest system to process data",
+  "main": "index.js",
+  "author": "Zach Stoltz <zach@stoltz.io>",
+  "repository": "https://github.com/ZachStoltz/ingestjs",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^17.0.3"
+  },
+  "dependencies": {
+    "cuejs": "^0.1.0",
+    "eslint": "^3.11.1"
+  }
+}

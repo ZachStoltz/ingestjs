@@ -1,0 +1,6 @@
+{
+    "eslint.enable": true,
+    "editor.fontSize": 15,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "boundary"
+}
