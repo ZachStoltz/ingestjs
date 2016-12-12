@@ -1,0 +1,31 @@
+sudo: required
+dist: trusty
+language: node_js
+install:
+  - clang++ --version
+  - true
+env:
+  global:
+   - LLVM_VERSION=3.7.0
+   - LLVM_ARCHIVE_PATH=$HOME/clang+llvm.tar.xz
+before_install:
+  - wget http://llvm.org/releases/$LLVM_VERSION/clang+llvm-$LLVM_VERSION-x86_64-linux-gnu-ubuntu-14.04.tar.xz -O $LLVM_ARCHIVE_PATH
+  - mkdir $HOME/clang+llvm
+  - tar xf $LLVM_ARCHIVE_PATH -C $HOME/clang+llvm --strip-components 1
+  - export PATH=$HOME/clang+llvm/bin:$PATH
+cache:
+  directories:
+    - node_modules
+node_js:
+  - "7.2.1"
+before_script:
+  - npm prune
+  - "yarn install --ignore-scripts"
+script:
+  - npm run lint
+  - npm run test-coverage
+#notifications:
+#  slack: t1me-team:DfTOcwEAXWO1YIFUN6wCSl7f
+after_success:
+  - npm run report-coverage
+  - bash <(curl -s https://codecov.io/bash)

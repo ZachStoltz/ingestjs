@@ -1,0 +1,19 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "sort-imports": [2, {
+      "ignoreCase": true,
+      "memberSyntaxSortOrder": [
+        "none",
+        "all",
+        "single",
+        "multiple"
+      ]
+    }],
+    "arrow-body-style": [0, "as-needed"],
+    "no-console": [0],
+    "max-len": [2, {"code": 130, "tabWidth": 2}],
+    "no-plusplus": [0]
+  }
+}
