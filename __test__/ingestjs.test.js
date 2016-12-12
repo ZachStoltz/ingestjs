@@ -13,7 +13,7 @@ describe('IngestJS test suite', () => {
       const queue = ingest.getQueue();
 
       expect(queue).toBeDefined();
-      expect(queue.size).toBeGreaterThan(0);
+      expect(queue.size()).toBeGreaterThan(0);
 
       done();
     }, 1000);

@@ -32,7 +32,6 @@ IngestJS.prototype.start = function start() {
 };
 
 IngestJS.prototype.stop = function stop() {
-  console.log('stop being called');
   clearInterval(this.flow);
   this.flow = undefined;
 };
